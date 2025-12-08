@@ -83,6 +83,19 @@ func (c Cell) NeighborsCross() []Cell {
 	}
 }
 
+func (c Cell) Neighbors() []Cell {
+	return []Cell{
+		c.Up(1).Left(1),
+		c.Up(1),
+		c.Up(1).Right(1),
+		c.Right(1),
+		c.Down(1).Right(1),
+		c.Down(1),
+		c.Down(1).Left(1),
+		c.Left(1),
+	}
+}
+
 func (c Cell) String() string {
 	return fmt.Sprintf("(%d,%d)", c.R, c.C)
 }
